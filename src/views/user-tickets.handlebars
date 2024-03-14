@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras Realizadas por {{ user.first_name }}</title>
+</head>
+
+<body>
+    <h1>Compras Realizadas por {{ user.first_name }}</h1>
+    <ul>
+        {{#each tickets}}
+        <li><a href="/api/tickets/{{ this._id }}">{{ this.purchase_datetime }} - Total: {{ this.amount }}</a></li>
+        {{/each}}
+    </ul>
+
+    <a href="/profile"><button>Volver al perfil</button></a>
+</body>
+
+</html>

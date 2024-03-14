@@ -1,0 +1,25 @@
+<div>
+    <h1>Registro</h1>
+    <form id="registerForm">
+        <label>Name</label>
+        <input name="first_name">
+        <br>
+        <label>Last Name</label>
+        <input name="last_name">
+        <br>
+        <label>E-mail</label>
+        <input name="email" type="email">
+        <br>
+        <label>Age</label>
+        <input name="age" type="number">
+        <br>
+        <label>Password</label>
+        <input name="password" type="password">
+        <br>
+        <input name="role" value="USER" type="hidden">
+        <br>
+        <input type="submit">
+    </form>
+    <p>Ya tienes cuenta? <a href="/api/users/login">Ingresa aquí</a></p>
+</div>
+<script src="/js/register.js"></script>

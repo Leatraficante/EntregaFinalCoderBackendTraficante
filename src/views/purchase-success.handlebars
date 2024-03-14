@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra realizada con éxito</title>
+</head>
+
+<body>
+    <h1>Compra realizada con éxito</h1>
+    <p>¡Tu compra ha sido realizada con éxito!</p>
+    <p><strong>Usuario: </strong> {{payload.purchaser}}</p>
+    <p><strong>Codigo de compra: </strong> {{payload.code}}</p>
+    <p><strong>Fecha: </strong> {{payload.purchase_datetime}}</p>
+    <p><strong>Total: </strong> ${{payload.amount}}</p> <br>
+    <p>¡Gracias por comprar con nosotros!</p>
+    <br>
+    <a href="/api/products"><button>Volver al inicio</button></a>
+
+
+</body>
+
+</html>

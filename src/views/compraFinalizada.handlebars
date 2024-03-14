@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Finalizada</title>
+</head>
+<body>
+    <h1>Compra Finalizada</h1>
+    <p>Código de Compra: {{ticketDetails.code}}</p>
+    <p>Fecha y Hora de Compra: {{ticketDetails.purchase_datetime}}</p>
+    <p>Monto Total: ${{ticketDetails.amount}}</p>
+    <p>Comprador: {{ticketDetails.purchaser}}</p>
+<div>
+    <a href="/api/products"><button>Volver a Productos</button></a>
+    <a href="/profile"><button>Ir a mi Perfil</button></a>
+</div>
+</body>
+</html>

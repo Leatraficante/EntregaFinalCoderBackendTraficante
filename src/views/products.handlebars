@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista de Productos</title>
+</head>
+
+<body>
+    <h1>¡Bienvenido {{user.first_name}}!</h1>
+    <a href="/profile"><button>Ir a mi perfil</button></a>
+    <h1>Lista de Productos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Id</th>
+                <th>Descripción</th>
+                <th>Código</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Categoría</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <td>{{this.title}}</td>
+                <td>{{this._id}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.code}}</td>
+                <td>${{this.price}}</td>
+                <td>{{this.stock}}</td>
+                <td>{{this.category}}</td>
+                <td>
+                    <a href="/api/products/{{this._id}}"><button>Ver detalles</button></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    {{#if hasPrevPage}}
+    <a href="/api/products?page={{prevPage}}"><button>Anterior</button></a>
+    {{/if}}
+    {{#if hasNextPage}}
+    <a href="/api/products?page={{nextPage}}"><button>Siguiente</button></a>
+    {{/if}}
+    <br><br>
+    <a href="/api/carts"><button>Ir al Carrito</button></a>
+</body>
+
+</html>

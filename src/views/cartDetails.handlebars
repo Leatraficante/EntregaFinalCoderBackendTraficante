@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Carrito de Compras</title>
+</head>
+
+<body>
+    <h1>Carrito de Compras de {{user.first_name}}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each cart.products}}
+            <tr>
+                <td>{{this.productId}}</td>
+                <td>{{this.quantity}}</td>
+                <td>$ {{this.price}}</td>
+                <td><button onclick="deleteProduct('{{../cart._id}}', '{{this._id}}')">Eliminar producto</button></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table> <br><br>
+    <a href="/api/carts/purchase/{{cart._id}}"><button>Finalizar Compra</button></a> <br><br>
+    <a href="/api/products"><button>Volver a Productos</button></a>
+    <a href="/api/carts"><button>Volver a Carrito</button></a>
+
+    <script>
+        function deleteProduct(cartId, productId) {
+            if (confirm('¿Estás seguro de que quieres eliminar este producto del carrito?')) {
+                fetch(`/api/carts/${cartId}/product/${productId}`, {
+                    method: 'DELETE'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        throw new Error('Error al eliminar el producto');
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                    alert('Hubo un error al eliminar el producto');
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

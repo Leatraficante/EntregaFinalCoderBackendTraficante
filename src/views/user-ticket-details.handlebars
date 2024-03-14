@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Compra</title>
+</head>
+
+<body>
+    <h1>Detalle de Compra</h1>
+    <h2>Fecha: {{ this.purchase_datetime }}</h2>
+    <h2>Total: ${{ this.amount }}</h2>
+    <h3>Codigo: {{ this.code }}</h3>
+
+    <a href="/api/tickets/user-tickets"><button>Mis compras anteriores</button></a><br><br>
+    <a href="/profile"><button>Volver al perfil</button></a>
+</body>
+
+</html>

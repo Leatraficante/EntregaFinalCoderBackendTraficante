@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista de Carritos</title>
+</head>
+
+<body>
+    <h1>Lista de Carritos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID del Carrito</th>
+                <th>Productos</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>{{carts._id}}</td>
+                <td>
+                    <ul>
+                        {{#each productsInCart}}
+                        <li>Producto ID: {{this.productId}}, Cantidad: {{this.quantity}}</li>
+                        {{/each}}
+                    </ul>
+                </td>
+                <td>
+                    <a href="/api/carts/{{carts._id}}"><button>Ir a finalizar compra</button></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/api/products"><button>Seguir comprando</button></a>
+</body>
+
+</html>
